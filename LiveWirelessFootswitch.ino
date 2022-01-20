@@ -55,7 +55,7 @@ void setup() {
   }
   Serial.println("Connected to Wifi");
 
-  myOSCManager_ = new OSCManager(new IPAddress(10, 3, 141, 1), 8000, 8887);
+  myOSCManager_ = new OSCManager(new IPAddress(10, 3, 141, 2), 8000, 8887);
   myOSCManager_->setup();
 
 
