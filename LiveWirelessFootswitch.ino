@@ -35,6 +35,8 @@ int lastDebounceTime = 0;
 
 void setup() {
   Serial.begin(115200);
+  delay(500);
+
   WiFi.begin(ssid, pass);
 
   delay(500);
@@ -54,8 +56,9 @@ void setup() {
     Serial.print(".");
   }
   Serial.println("Connected to Wifi");
-
-  myOSCManager_ = new OSCManager(new IPAddress(10, 3, 141, 2), 8000, 8887);
+  Serial.print("local ip: ");
+  Serial.println(WiFi.localIP());
+  myOSCManager_ = new OSCManager(new IPAddress(10, 3, 141, 3), 8000, 8887);
   myOSCManager_->setup();
 
 
